@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.7'
+        python-version: '3.7.9'
 
     - name: Upgrade pip, setuptools, and wheel
       run: |
@@ -33,6 +33,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+        pip install backports.zoneinfo==0.2.1  # Specify compatible version
 
     - name: Check for package installation issues
       run: |
